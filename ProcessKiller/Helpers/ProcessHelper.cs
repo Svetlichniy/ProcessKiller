@@ -78,8 +78,8 @@ namespace ProcessKiller
                 var moduleName = item.Split('\t');
                 if (moduleName[1].Equals("Процесс"))
                     KillProcess(moduleName[0]);
-                else
-                    KillTask(item);
+                else if (moduleName[1].Equals("Служба"))
+                    KillTask(moduleName[0]);
             }
         }
     }
